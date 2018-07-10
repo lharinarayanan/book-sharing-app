@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    	<meta charset="utf-8" description="designing a login page" >
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Registration Page</title>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <style type="text/css">
+              
+              body {
+        	          background-image: url("download.jpg");
+                   }
+              header {
+                   padding: 30px 50px 10px 50px;
+                 }	
+              h1    {
+                      text-align: center;
+                      font-weight: bold;
+                      font-style: italic;
+                      font-size: 60px;
+                      text-shadow: 3px 2px rgba(212,219,10,0.8);
+                    }
+              #Reg   { 
+                        padding-left: 100px;
+                        font-weight: bold;
+                        color: rgb(247, 15, 125);              
+                        padding-top:  10px; 
+                        font-size: 30px;
+                        font-stretch: 200%;
+                     }
+              #abc   {
+                       text-align: center;
+                     }
+              input[type=text] {
+                                  width: 30%;
+                                  color: black;
+                                  padding: 10px 10px 10px 10px;
+                                  margin: 10px 0;
+                                  border: 5px solid;
+                                  border-color: rgb(180,180,180);
+                                  height: 
+                               }     
+             input[type=password] {
+                                  width: 30%;
+                                  color: black;
+                                  padding: 10px 10px 10px 10px;
+                                  margin: 10px 0;
+                                  border: 5px solid;
+                                  border-color: rgb(180,180,180);
+                                  height: 
+                                 }
+            input[type=email] {
+                                  width: 30%;
+                                  color: black;
+                                  padding: 10px 10px 10px 10px;
+                                  margin: 10px 0;
+                                  border: 5px solid;
+                                  border-color: rgb(180,180,180);
+                                  height: 
+                                 }
+            input[type=tel] {
+                                  width: 30%;
+                                  color: black;
+                                  padding: 10px 10px 10px 10px;
+                                  margin: 10px 0;
+                                  border: 5px solid;
+                                  border-color: rgb(180,180,180);
+                                  height: 
+                                 }
+            #add            {
+                                  width: 30%;
+                                  color: black;
+                                  padding: 10px 10px 10px 10px;
+                                  margin: 10px 0;
+                                  border: 5px solid;
+                                  border-color: rgb(180,180,180);
+                            }
+             #asd           {
+                                 padding-left: 440px;
+                             }
+             #imgtext      {
+                                   padding-right: 650px;
+                            }
+            input[type=file] {    text-align: center
+                                  width: 30%;
+                                  color: black;
+                                  padding: 10px 10px 10px 10px;
+                                  margin: 10px 0;
+                                 
+                                  border:none;
+                                  height:40px; 
+                                 }
+            input[type=submit] {
+                                     width: 19%;
+                                     background-color: blue;
+                                     color: white;
+                                     padding: 14px 20px;
+                                     margin: 8px 0;
+                                     border: 3px solid;
+                                     border-radius: 4px;
+                                     cursor: pointer;
+                               }  
+                                 #imgtext      {
+                                   padding-right: 650px;
+                            }
+
+
+         </style>
+         <script type="text/javascript">
+   function myfunction() {
+                     var xmlhttp;
+                    var uname=document.getElementById("uname").value;
+                    if (uname != "")
+                 {
+                        
+                          xmlhttp = new XMLHttpRequest();
+          
+                      xmlhttp.onreadystatechange=function()
+                    {
+                        if (this.readyState==4 && this.status==200)
+                      document.getElementById("userid").innerHTML=this.responseText;
+                
+};
+xmlhttp.open("GET","sp_uname_availability.php?name="+uname,true);
+xmlhttp.send();
+}
+};  
+	function validateForm() {
+    var x = document.forms["registration"]["User Name"].value;
+    var y = document.forms["registration"]["Password"].value;
+    var z = document.forms["registration"]["Email"].value;
+    var w = document.forms["registration"]["telephone"].value;
+    var f = document.forms["registration"]["address"].value;
+   
+   // var r=/^[A-Za-z0-9]+$/;
+    //var r=/[^0-9]/;  
+    //ar q=/^[a-zA-Z\s]+$/;
+    //var w=/[^0-9|^a-z|^A-Z]/;
+    var i=0;
+    var j=x.length;
+    var eval=1;
+    if (x == "") {
+        document.getElementById('userid').innerHTML="<span style='color: red;'>**Name must be filled out";
+        eval=0;
+    }
+    else {
+      for( ;i<j;i++)
+      {
+        if((x.charAt(x[i])>="A"&&x.charAt(x[i])<="Z")||(x.charAt(x[i])>="a"&&x.charAt(x[i])<="z"))
+        {
+          continue;
+        }
+        else
+        {
+           document.getElementById('userid').innerHTML="<span style='color: red;'>**Name must contain alphabets only";
+           eval=0;
+           break;}
+    
+    }
+            if(eval==1)
+        document.getElementById('userid').innerHTML="";
+
+    }
+          
+
+    if(y=="")
+    {
+    	document.getElementById('passw').innerHTML="<span style='color: red;'>**Password must be filled out";
+    	eval=0;
+    }
+  
+      var i=0;
+      var j=y.length;
+      for( ;i<j;i++)
+      {
+        if((y.charAt(x[i])>="A"&&y.charAt(x[i])<="Z")||(y.charAt(x[i])>="a"&&y.charAt(x[i])<="z")||(y.charAt(x[i])>="0"&&y.charAt(x[i])<="9"))
+        {
+          continue;
+        }
+        else
+        {
+        document.getElementById('passw').innerHTML="<span style='color: red;'>**password must contain alphanumeric characters filled out";
+           eval=0;
+           break;}
+    }
+         if(eval==1) 
+         document.getElementById('passw').innerHTML="";
+     
+  // if(!(y.value.match(w)))
+//{
+//alert('your password can have only alphanumeric characters');
+//return false;
+//}
+          if(z=="")
+         {
+            document.getElementById('em').innerHTML="<span style='color: red;'>**email must be filled out";
+            eval=0;
+        } 
+        else{
+              document.getElementById('em').innerHTML="";
+           }
+        if(w=="")
+       {
+       document.getElementById('pho').innerHTML="<span style='color: red;'>**phone no. must be filled out";
+        eval=0;
+      }
+        
+   
+     var i=0;
+     var j=w.length;
+     for( ;i<j;i++)
+    {
+        if((w[i]>=0&&w[i]<=9))
+        {
+          continue;
+        }
+        else
+        {
+        document.getElementById('pho').innerHTML="<span style='color: red;'>**phone number must contain only numbers";
+        eval=0;
+        break;}
+    }
+   
+       if(eval==1)
+       {
+      document.getElementById('pho').innerHTML="";      
+     }
+      if(f=="")
+     {
+    document.getElementById('addr').innerHTML="<span style='color: red;'>**Address must be filled out";
+    eval=0;
+   }
+   else{
+         document.getElementById('addr').innerHTML="";
+       }
+   
+       if(eval==0)
+       {
+         return false;
+       }   
+       else{
+   	            alert("details accepted");
+   	            return true;
+            }
+ }
+ function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+	</script>         	
+
+
+        
+    </head>
+    <body>
+           <header id="de">
+           	    <h1> Desi Books</h1>
+           </header>
+            <div id="Reg">Registration Form</div>
+            <form name="registration" enctype="multipart/form-data onsubmit="return validateForm()" method="post"  id="abc"  action="spreg_suc.php"  autocomplete="off"           
+                 enctype="multipart/form-data">
+                <input type="text" name="UserName" placeholder="User Name" id="uname"onblur="myfunction()" required><br><span id="userid"></span><br>
+                <input type="password" name="Password" placeholder="Password" required><span id="passw"></span><br>
+                <input type="email" name="Email" placeholder="Email" required><span id="em"></span><br>
+                <input type="tel" name="telephone" placeholder="Telephone number" required maxlength="10" onkeypress="return isNumber(event)"><span id="pho"></span><br>
+                <textarea name="address" rows="8" cols="30" placeholder="Address" id="add"></textarea><span id="addr"></span><br><br>
+                 <br>
+                  <div id="imgtext" >
+                        <strong style="font-size: 20px ;color: rgba(100,160,250,0.9); ">Upload your Image</strong></div>  
+                 <div><input type="file" name="image" accept="image/*" placeholder="image upload" style="padding-left: 550px;" />
+                 </div><br>
+
+                <input type="submit" name="submit"><br>
+
+    </body>
+    </html>

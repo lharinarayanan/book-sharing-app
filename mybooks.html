@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Books Search!</title>
+          <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">-->
+          <link rel="stylesheet" href="styles/index.css">
+     </head>
+     <body>
+          <h1>Search books here</h1>
+          <h2 style="text-align: left;color: rgb(255,255,255);"><a href = "sp_logout.php">Sign Out</a></h2>
+          <h2 style="text-align: right;color: rgb(255,255,255);"><a href = "sp_welcome.php">Go Back</a></h2>
+          <!-- insert sign out code here--> 
+          <div style="text-align: center;align-items: center;align-content: center;">
+               <div id="main">
+                    <div id="formcontainer" >
+                <button class="reset" value="reset" onclick="location.href='mybooks.html'">Reset</button>
+                         <form id="filters" class="search" title="search filters"></form>
+                    </div>
+                    
+               </div>
+          </div>
+
+     </body>
+     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+     <script src="googlesearchbooks.js"></script>
+</html>
