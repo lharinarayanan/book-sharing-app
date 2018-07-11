@@ -17,7 +17,7 @@ note VARCHAR(255) );
 
 Place the above link in your browser http://localhost/demo/sp_login.php
 
-Thus the user can signup/login if his account exists and can add edit remove notes and can check in or check out his todo lists which he can add/remove/edit.
+Thus the user can signup/login if his account exists and can add edit remove books and can control his profile status
 P.S
 Not much of emphasis has been given to styling of the webpage.
 The apache and mysql component in the XAMPP control pannel need to be started only once but it sholud be done after you log into your system.
